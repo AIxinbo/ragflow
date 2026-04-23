@@ -32,6 +32,8 @@ docker compose up -d
 🛑 【危险警告】 测试没问题后，绝对不要执行 docker compose down，否则刚才下载的几个 G 的依赖包会被清空！请直接进入阶段三！
 
 阶段三：环境固化与离线导出（在终端执行）
+
+# 下面是在本地测试通过后,导出镜像,在远程服务器使用
 6. 固化运行时容器（打快照）
 为了让这 3GB 的运行库也能一起带到断网的 Linux 服务器上，我们需要把当前“吃饱了”的容器冻结成一个新镜像：
 
@@ -76,6 +78,9 @@ docker load -i lz-ragflow-full.tar
 
 确认 USE_DOCLING=false（如果不依赖它的话，建议写死关闭）
 
+打开 docker-compose.yml 文件
+找到- ./tiktoken_cache/9b5ad71b2ce5302211f9c61530b329a4922fc6a4:/ragflow/9b5ad71b2ce5302211f9c61530b329a4922fc6a4
+分别在52行和107行,去掉注释,启用tiktoken缓存
 保存后执行：
 
 Bash

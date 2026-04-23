@@ -49,7 +49,7 @@ services:
       - ./service_conf.yaml.template:/ragflow/conf/service_conf.yaml.template # 服务配置模板
       - ./entrypoint.sh:/ragflow/entrypoint.sh # 容器启动入口脚本
       # 解决tiktoken.get_encoding("cl100k_base") 报错
-      - ./tiktoken_cache/9b5ad71b2ce5302211f9c61530b329a4922fc6a4:/ragflow/9b5ad71b2ce5302211f9c61530b329a4922fc6a4
+      #- ./tiktoken_cache/9b5ad71b2ce5302211f9c61530b329a4922fc6a4:/ragflow/9b5ad71b2ce5302211f9c61530b329a4922fc6a4
     env_file: .env
     networks:
       - ragflow
@@ -104,7 +104,7 @@ services:
       - ./service_conf.yaml.template:/ragflow/conf/service_conf.yaml.template # 服务配置模板
       - ./entrypoint.sh:/ragflow/entrypoint.sh # 容器启动入口脚本
       # 解决tiktoken.get_encoding("cl100k_base") 报错
-      - ./tiktoken_cache/9b5ad71b2ce5302211f9c61530b329a4922fc6a4:/ragflow/9b5ad71b2ce5302211f9c61530b329a4922fc6a4
+      #- ./tiktoken_cache/9b5ad71b2ce5302211f9c61530b329a4922fc6a4:/ragflow/9b5ad71b2ce5302211f9c61530b329a4922fc6a4
     env_file: .env
     networks:
       - ragflow
